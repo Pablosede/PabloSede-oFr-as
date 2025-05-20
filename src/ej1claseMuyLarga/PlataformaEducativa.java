@@ -3,40 +3,40 @@ package ej1claseMuyLarga;
 import java.util.*;
 
 public class PlataformaEducativa {
-	private Map<String, String> usuarios; // username -> password
+	private Map<String, String> users; // username -> password
 	private Map<String, List<String>> cursos; // username -> cursos
-	private Map<String, String> contenidoCursos; // curso -> contenido
+	private Map<String, String> Cursos; // curso -> contenido
 
-	public PlataformaEducativa() {
-		usuarios = new HashMap<>();
+	public PlataformaEducativa() { 
+		users = new HashMap<>();
 		cursos = new HashMap<>();
-		contenidoCursos = new HashMap<>();
+		Cursos = new HashMap<>();
 	}
 
 	public void registrarUsuario(String username, String password) {
-		if (!usuarios.containsKey(username)) {
-			usuarios.put(username, password);
+		if (!users.containsKey(username)) {
+			users.put(username, password);
 			System.out.println("Usuario registrado con éxito.");
 		} else {
-			System.out.println("El usuario ya existe.");
+			System.out.println("El usuario ya se ha registrado.");
 		}
 	}
 
 	public boolean iniciarSesion(String username, String password) {
-		return usuarios.containsKey(username) && usuarios.get(username).equals(password);
+		return users.containsKey(username) && users.get(username).equals(password);
 	}
 
 	public void agregarCurso(String curso, String contenido) {
-		if (!contenidoCursos.containsKey(curso)) {
-			contenidoCursos.put(curso, contenido);
+		if (!Cursos.containsKey(curso)) {
+			Cursos.put(curso, contenido);
 			System.out.println("Curso agregado con éxito.");
 		} else {
-			System.out.println("El curso ya existe.");
+			System.out.println("El curso ya se ha agregado.");
 		}
 	}
 
 	public void inscribirUsuarioEnCurso(String username, String curso) {
-		if (usuarios.containsKey(username) && contenidoCursos.containsKey(curso)) {
+		if (users.containsKey(username) && Cursos.containsKey(curso)) {
 			cursos.get(username).add(curso);
 			System.out.println("Usuario inscrito en el curso.");
 		} else {

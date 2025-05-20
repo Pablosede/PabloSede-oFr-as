@@ -6,6 +6,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="D:/003.CODE/java/oraclejdbc6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
